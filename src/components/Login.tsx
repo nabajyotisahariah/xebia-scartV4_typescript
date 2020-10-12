@@ -10,6 +10,9 @@ import { loginAction } from "./../redux";
 // https://www.youtube.com/watch?v=3d9XqFmCmQw - Setting up React from scratch with Redux and TypeScript" without Hooks
 
 // https://www.youtube.com/watch?v=SVuwCTiG5YA - Redux TypeScript Types for Beginners
+//https://www.youtube.com/watch?v=01hxWBrVBbI - Redux TypeScript Redux Thunk for Beginners
+//https://github.com/Jon-Peppinck/webpack-typescript-redux 
+
 interface ILoginProps {
   user ?: LoginResponse | null;
   history:any;

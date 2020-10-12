@@ -19,7 +19,7 @@ export interface LoginActionLoading {
     payload:any
   }
   
-  export interface LoginActionRequest {
+  export interface LoginActionRequest  {
     type: typeof LOGIN_USER_REQUEST
   }
   
