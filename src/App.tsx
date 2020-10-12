@@ -6,6 +6,8 @@ import store from "./redux/store";
 import { Provider } from "react-redux";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import ProductListing from './components/ProductListing';
+import Header1 from './Header1';
+
 
 function App(){
   return (
@@ -16,9 +18,8 @@ function App(){
             <Route path="/" exact component={Login} />  
             <Route path="/product" exact component={ProductListing}/>        
           </Route> 
-        </Router>  
-        {/*<Login/>
-        <Header1 firstName="Nabayoti"/>*/}           
+        </Router> 
+        {/*<Header1 firstName="Nabayoti"/>*/}         
        </div>
     </Provider>
   );

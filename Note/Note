@@ -1,0 +1,5 @@
+Installing Create React App with Typescript
+
+yarn create-react-app app_name --template typescript
+#or
+npx create-react-app app_name --template typescript

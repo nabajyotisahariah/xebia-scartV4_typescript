@@ -1,11 +1,13 @@
-import {LOGIN_USER_INITIATE, LOGIN_USER_SUCCESS, LOGIN_USER_FAILURE, LOGOUT_USER_REQUEST} from './userType'
+import {LOGIN_USER_INITIATE, LOGIN_USER_SUCCESS, LOGIN_USER_FAILURE, LOGOUT_USER_REQUEST, LoginActionTypes} from './userType'
+import {LoginResponse} from '../../model/LoginResponse'
 
-var initialState = {
+const defaultState : LoginResponse =  {
     loading: false,
     data : [],
     error : null
-}
-export const userReducer = (state = initialState, action : any) => {
+};
+
+export const userReducer = (state = defaultState, action : LoginActionTypes) => {
     console.log("userReducer ",state," action ",action.type)
     switch(action.type) {
         case LOGIN_USER_INITIATE:

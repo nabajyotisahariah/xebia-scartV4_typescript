@@ -12,6 +12,9 @@ interface Movie {
     description ?:string
 }
 
+// Written as a function expression
+const OtherHeading: React.FC = () => <h1>My Website Heading</h1>
+
 function Header1(props:HeaderProps) {
 
     const [count, setCount] = useState <number>(0);
@@ -30,6 +33,8 @@ function Header1(props:HeaderProps) {
             {props.firstName} - {props.lastName} - count {count}
             
             <br/>Movie {movie != null ? movie.title : 'Empty'}
+
+            <OtherHeading/>
 
             <br/><button onClick={increment}>Clickme</button>
         </div>

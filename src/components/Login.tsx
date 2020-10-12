@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { Dispatch } from "redux";
+import { LoginResponse, LoginResponse1 } from "../model/LoginResponse";
 import { loginAction } from "./../redux";
 //import common from "./common";
 //console.log("como ", common);
@@ -8,8 +9,9 @@ import { loginAction } from "./../redux";
 //https://dzone.com/articles/react-redux-hooks-with-typescript-in-20204
 // https://www.youtube.com/watch?v=3d9XqFmCmQw - Setting up React from scratch with Redux and TypeScript" without Hooks
 
+// https://www.youtube.com/watch?v=SVuwCTiG5YA - Redux TypeScript Types for Beginners
 interface ILoginProps {
-  user ?: any | null;
+  user ?: LoginResponse | null;
   history:any;
   loginTrigger : (username:string, password :string) => any
 }
@@ -79,7 +81,7 @@ class Login extends React.Component <ILoginProps, ILoginState> {
         {" "}
         <br />
         <button onClick={() => this.funcLogin(username, password)}>Login{" "}</button>
-        {/*{user.error ? <div style={{"color":"red"}}>Error {user.error}</div>: null} */}
+        {user && user.error ? <div style={{"color":"red"}}>Error {user.error}</div>: null}  
       </div>
     );
   }
@@ -93,7 +95,7 @@ const mapsStateToProps = (state:any) => {
 
 const mapsDispatchToProps = (dispatch : Dispatch) => {
   return {
-    loginTrigger: (username:string, password:string) => dispatch(loginAction(username, password)),
+    loginTrigger: (username:string, password:string) : LoginResponse => dispatch(loginAction(username, password)),
   };
 };
 
